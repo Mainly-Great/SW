@@ -44,7 +44,7 @@ try:
         "toY": 900
     })
 
-    driver.swipe(500, 2000, 450, 900, 1000)
+    # driver.swipe(500, 2000, 450, 900, 1000)
 
 
      # def swipe(driver):
