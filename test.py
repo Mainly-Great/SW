@@ -8,7 +8,7 @@ options = XCUITestOptions()
 options.platform_name = "iOS"
 options.automation_name = "XCUITest"
 # options.device_name = "iPhone"
-# options.browser_name = "Safari"
+options.browser_name = "Safari"
 # options.platform_version = os.getenv("IOS_VERSION", "18.5")
 # options.platform_version = "17.0"
 
@@ -27,7 +27,7 @@ try:
 
     # 👆 محاولة النقر (أي مكان في الصفحة)
     driver.tap([(950, 520)])
-    driver.tap([(520, 950)])
+    # driver.tap([(520, 950)])
     time.sleep(2)
 
     # ⬇️ سحب / تمرير
