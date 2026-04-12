@@ -8,11 +8,12 @@ options = XCUITestOptions()
 options.platform_name = "iOS"
 options.automation_name = "XCUITest"
 # options.device_name = "iPhone"
-options.browser_name = "Safari"
+# options.browser_name = "Safari"
 # options.platform_version = os.getenv("IOS_VERSION", "18.5")
 # options.platform_version = "17.0"
 
 options.udid = os.environ.get("DEVICE_ID")
+options.browser_name = "Safari"
 
 driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 # driver = webdriver.Remote("http://localhost:4723/wd/hub", options=options)
