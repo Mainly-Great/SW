@@ -3,9 +3,9 @@ from appium.options.ios import XCUITestOptions
 from selenium.webdriver.common.by import By
 import time
 import os 
-from appium.webdriver.common.action_chains import ActionChains
-from appium.webdriver.common.actions import interaction
-from appium.webdriver.common.actions.pointer_input import PointerInput
+# from appium.webdriver.common.action_chains import ActionChains
+# from appium.webdriver.common.actions import interaction
+# from appium.webdriver.common.actions.pointer_input import PointerInput
  
 options = XCUITestOptions()
 options.platform_name = "iOS"
