@@ -40,6 +40,8 @@ try:
         "toY": 900
     })
 
+    driver.swipe(500, 2000, 450, 900, 1000)
+
     driver.tap([(500, 1320)])
     driver.tap([(500, 1320)])
     time.sleep(3)
