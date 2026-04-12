@@ -3,6 +3,9 @@ from appium.options.ios import XCUITestOptions
 from selenium.webdriver.common.by import By
 import time
 import os 
+from appium.webdriver.common.action_chains import ActionChains
+from appium.webdriver.common.actions import interaction
+from appium.webdriver.common.actions.pointer_input import PointerInput
  
 options = XCUITestOptions()
 options.platform_name = "iOS"
@@ -41,6 +44,20 @@ try:
     })
 
     driver.swipe(500, 2000, 450, 900, 1000)
+
+
+     def swipe(driver):
+         finger = PointerInput(interaction.POINTER_TOUCH, "finger")
+         actions = ActionChains(driver)
+         actions.w3c_actions = interaction.ActionBuilder(driver, mouse=finger)
+     
+         actions.w3c_actions.pointer_action.move_to_location(500, 2000)
+         actions.w3c_actions.pointer_action.pointer_down()
+         actions.w3c_actions.pointer_action.pause(1.0)
+         actions.w3c_actions.pointer_action.move_to_location(450, 900)
+         actions.w3c_actions.pointer_action.pointer_up()
+     
+         actions.perform()
 
     driver.tap([(500, 1320)])
     driver.tap([(500, 1320)])
