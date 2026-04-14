@@ -8,7 +8,7 @@ jobs:
   ios:
     runs-on: macos-latest
 
-    steps:
+    steps: 
       - uses: actions/checkout@v4
 
 
