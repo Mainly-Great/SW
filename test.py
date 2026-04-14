@@ -21,7 +21,7 @@ driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 
 try:
     # فتح الموقع
-    driver.get("https://duckduckgo.com/?q=DarkNet+Ads&ia=web")
+    driver.get("https://cryptu-compass.netlify.app/")
     time.sleep(8) 
 
     # 📸 صورة 1
