@@ -15,7 +15,7 @@ driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 
 try:
     # فتح الموقع
-    driver.get("https://duckduckgo.com/?q=DarkNet+Ads&ia=web")
+    driver.get("https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%8A_%D9%84%D8%A7%D8%B1%D9%8A%D8%AC%D8%A7%D9%86%D9%8A")
     time.sleep(8) 
 
     # 📸 صورة 1
