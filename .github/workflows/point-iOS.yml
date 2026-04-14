@@ -128,35 +128,41 @@ jobs:
       
           echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_ENV
 
-      - name: Pre-build WebDriverAgent (FIX 🔥)
-        run: |
-          echo "Building WDA manually..."
+      # - name: Pre-build WebDriverAgent (FIX 🔥)
+      #   run: |
+      #     echo "Building WDA manually..."
       
-          xcodebuild \
-            -project /Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj \
-            -scheme WebDriverAgentRunner \
-            -destination "platform=iOS Simulator,id=$DEVICE_ID" \
-            build || true
+      #     xcodebuild \
+      #       -project /Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj \
+      #       -scheme WebDriverAgentRunner \
+      #       -destination "platform=iOS Simulator,id=$DEVICE_ID" \
+      #       build || true
 
-      - name: Wait for Simulator FULL readiness (REAL FIX 🔥)
+      # - name: Wait for Simulator FULL readiness (REAL FIX 🔥)
+      #   run: |
+      #     echo "Waiting for simulator services..."
+      
+      #     # فتح simulator service داخليًا
+      #     xcrun simctl spawn $DEVICE_ID launchctl print system > /dev/null 2>&1 || true
+      
+      #     # انتظار SpringBoard (واجهة iOS)
+      #     for i in {1..30}; do
+      #       if xcrun simctl spawn $DEVICE_ID launchctl print system | grep -q "com.apple.springboard"; then
+      #         echo "Simulator fully ready ✅"
+      #         break
+      #       fi
+      #       echo "Waiting SpringBoard... ($i)"
+      #       sleep 2
+      #     done
+      
+      #     # انتظار إضافي بسيط (مهم جدًا)
+      #     sleep 10
+
+      - name: Kill stuck WDA (IMPORTANT 🔥)
         run: |
-          echo "Waiting for simulator services..."
-      
-          # فتح simulator service داخليًا
-          xcrun simctl spawn $DEVICE_ID launchctl print system > /dev/null 2>&1 || true
-      
-          # انتظار SpringBoard (واجهة iOS)
-          for i in {1..30}; do
-            if xcrun simctl spawn $DEVICE_ID launchctl print system | grep -q "com.apple.springboard"; then
-              echo "Simulator fully ready ✅"
-              break
-            fi
-            echo "Waiting SpringBoard... ($i)"
-            sleep 2
-          done
-      
-          # انتظار إضافي بسيط (مهم جدًا)
-          sleep 10
+          killall -9 WebDriverAgentRunner || true
+          killall -9 xcodebuild || true
+          killall -9 iproxy || true
 
       # تشغيل المحاكي
       # - name: Boot Simulator
