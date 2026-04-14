@@ -14,8 +14,8 @@ options.set_capability("wdaLocalPort", 8100)
 options.set_capability("wdaLaunchTimeout", 120000)
 options.set_capability("wdaConnectionTimeout", 120000)
 options.set_capability("showXcodeLog", True)
-# options.set_capability("wdaStartupRetries", 2)
-# options.set_capability("wdaStartupRetryInterval", 20000)
+options.set_capability("wdaStartupRetries", 2)
+options.set_capability("wdaStartupRetryInterval", 20000)
 
 driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 
