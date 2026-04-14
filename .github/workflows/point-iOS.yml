@@ -128,6 +128,16 @@ jobs:
       
           echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_ENV
 
+      - name: Pre-build WebDriverAgent (FIX 🔥)
+        run: |
+          echo "Building WDA manually..."
+      
+          xcodebuild \
+            -project /Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj \
+            -scheme WebDriverAgentRunner \
+            -destination "platform=iOS Simulator,id=$DEVICE_ID" \
+            build || true
+
       # تشغيل المحاكي
       # - name: Boot Simulator
       #   run: |
