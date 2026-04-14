@@ -53,9 +53,9 @@ try:
     })
     
     # elem1 = driver.find_element("xpath", "//*[contains(@text,'Studio') or contains(@content-desc,'Studio') or contains(@text,'Start Your Project') or contains(@content-desc,'Start Your Project')]")
-    elem1 = driver.find_element("xpath", "//*[contains(@text,'Start Your Project')]")
-    elem1.click()
-    time.sleep(5)
+    # elem1 = driver.find_element("xpath", "//*[contains(@text,'Start Your Project')]")
+    # elem1.click()
+    # time.sleep(5)
 
     # ⬇️ تمرير (بديل drag)
     driver.execute_script("mobile: swipe", {
@@ -63,14 +63,14 @@ try:
     })
     time.sleep(2)
 
-    # driver.execute_script("mobile: swipe", {
-    #     "duration": 1.0,
-    #     "fromX": 500,
-    #     "fromY": 2000,
-    #     "toX": 450,
-    #     "toY": 900
-    # })
-    # time.sleep(3)
+    driver.execute_script("mobile: dragFromToForDuration", {
+        "duration": 1.0,
+        "fromX": 500,
+        "fromY": 2000,
+        "toX": 450,
+        "toY": 900
+    })
+    time.sleep(3)
 
     driver.execute_script("mobile: tap", {
         "x": 500,
