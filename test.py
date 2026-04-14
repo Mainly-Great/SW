@@ -7,9 +7,15 @@ options = XCUITestOptions()
 options.platform_name = "iOS"
 options.automation_name = "XCUITest"
 options.udid = os.environ.get("DEVICE_ID")
-options.set_capability("wdaStartupRetries", 3)
-options.set_capability("wdaStartupRetryInterval", 20000)
 options.browser_name = "Safari"
+
+options.set_capability("useNewWDA", True)
+options.set_capability("wdaLocalPort", 8100)
+options.set_capability("wdaLaunchTimeout", 120000)
+options.set_capability("wdaConnectionTimeout", 120000)
+options.set_capability("showXcodeLog", True)
+options.set_capability("wdaStartupRetries", 2)
+options.set_capability("wdaStartupRetryInterval", 20000)
 
 driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 
