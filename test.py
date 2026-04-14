@@ -15,7 +15,7 @@ driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 
 try:
     # فتح الموقع
-    driver.get("https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%8A_%D9%84%D8%A7%D8%B1%D9%8A%D8%AC%D8%A7%D9%86%D9%8A")
+    driver.get("https://www.bing.com/search?q=%D9%84%D8%B1%D8%A7%D8%AC%D8%A7%D9%86%D9%8A&cvid=fbfeadd471854d59a212e920a93fad2b&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCTEzMzI5ajBqNKgCCLACAQ&FORM=ANAB01&PC=W194")
     time.sleep(8) 
 
     # 📸 صورة 1
