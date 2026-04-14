@@ -7,7 +7,7 @@ options = XCUITestOptions()
 options.platform_name = "iOS"
 options.automation_name = "XCUITest"
 options.udid = os.environ.get("DEVICE_ID")
-options.set_capability("wdaStartupRetries", 5)
+options.set_capability("wdaStartupRetries", 3)
 options.set_capability("wdaStartupRetryInterval", 20000)
 options.browser_name = "Safari"
 
