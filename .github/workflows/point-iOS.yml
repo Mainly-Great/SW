@@ -158,11 +158,11 @@ jobs:
       #     # انتظار إضافي بسيط (مهم جدًا)
       #     sleep 10
 
-      # - name: Kill stuck WDA (IMPORTANT 🔥)
-      #   run: |
-      #     killall -9 WebDriverAgentRunner || true
-      #     killall -9 xcodebuild || true
-      #     killall -9 iproxy || true
+      - name: Kill stuck WDA (IMPORTANT 🔥)
+        run: |
+          killall -9 WebDriverAgentRunner || true
+          killall -9 xcodebuild || true
+          killall -9 iproxy || true
 
       # - name: Prebuild WDA (الحل الحقيقي)
       #   run: |
