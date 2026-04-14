@@ -9,11 +9,11 @@ options.automation_name = "XCUITest"
 options.udid = os.environ.get("DEVICE_ID")
 options.browser_name = "Safari"
 
-# options.set_capability("useNewWDA", True)
-# options.set_capability("wdaLocalPort", 8100)
-# options.set_capability("wdaLaunchTimeout", 120000)
-# options.set_capability("wdaConnectionTimeout", 120000)
-# options.set_capability("showXcodeLog", True)
+options.set_capability("useNewWDA", True)
+options.set_capability("wdaLocalPort", 8100)
+options.set_capability("wdaLaunchTimeout", 120000)
+options.set_capability("wdaConnectionTimeout", 120000)
+options.set_capability("showXcodeLog", True)
 options.set_capability("usePrebuiltWDA", True)
 options.set_capability("derivedDataPath", "/Users/runner/Library/Developer/Xcode/DerivedData")
 options.set_capability("wdaStartupRetries", 2)
