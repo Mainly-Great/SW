@@ -116,10 +116,17 @@ jobs:
 
       - name: Use Existing Simulator (Stable)
         run: |
-          DEVICE_ID=$(xcrun simctl list devices available \
-            | grep "iPhone 16 Pro (" \
-            | head -n 1 \
-            | grep -Eo '[A-F0-9-]{36}')
+          DEVICES=($(xcrun simctl list devices available \
+            | grep -E "iPhone|iPad|Vision" \
+            | grep -Eo '[A-F0-9-]{36}'))
+      
+          COUNT=${#DEVICES[@]}
+          INDEX=$(jot -r 1 0 $((COUNT-1)))
+          DEVICE_ID=${DEVICES[$INDEX]}
+          # DEVICE_ID=$(xcrun simctl list devices available \
+          #   | grep "iPhone 16 Pro (" \
+          #   | head -n 1 \
+          #   | grep -Eo '[A-F0-9-]{36}')
       
           echo "Using device: $DEVICE_ID"
       
