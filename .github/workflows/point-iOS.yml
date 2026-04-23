@@ -165,6 +165,14 @@ jobs:
       #     # انتظار إضافي بسيط (مهم جدًا)
       #     sleep 10
 
+
+      - name: Open URL
+        run: xcrun simctl openurl $DEVICE_ID https://viscend.vercel.app
+
+      # انتظار تحميل الصفحة
+      - name: Wait page load
+        run: sleep 15
+
       - name: Kill stuck WDA (IMPORTANT 🔥)
         run: |
           killall -9 WebDriverAgentRunner || true
