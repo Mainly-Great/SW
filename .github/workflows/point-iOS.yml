@@ -173,12 +173,12 @@ jobs:
           killall -9 xcodebuild || true
           killall -9 iproxy || true
 
-      - name: Open URL
-        run: xcrun simctl openurl $DEVICE_ID https://viscend.vercel.app
+      # - name: Open URL
+      #   run: xcrun simctl openurl $DEVICE_ID https://viscend.vercel.app
 
-      # انتظار تحميل الصفحة
-      - name: Wait page load
-        run: sleep 15
+      # # انتظار تحميل الصفحة
+      # - name: Wait page load
+      #   run: sleep 15
       # - name: Prebuild WDA (الحل الحقيقي)
       #   run: |
       #     WDA_PATH=$(find /Users/runner/.appium -name WebDriverAgent.xcodeproj | head -n 1)
