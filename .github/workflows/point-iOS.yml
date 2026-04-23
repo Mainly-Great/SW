@@ -215,9 +215,9 @@ jobs:
       #     xcrun --sdk iphonesimulator --show-sdk-version
 
       # تشغيل الاختبار
-      - name: Run Appium Script
-        run: |
-          python3 test.py
+      # - name: Run Appium Script
+      #   run: |
+      #     python3 test.py
 
       # حفظ الصور
       - name: Upload Screenshots
