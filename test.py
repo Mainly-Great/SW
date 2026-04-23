@@ -23,8 +23,8 @@ driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
 
 try:
     # فتح الموقع
-    # driver.get("https://viscend.vercel.app")
-    # time.sleep(8) 
+    driver.get("https://viscend.vercel.app")
+    time.sleep(8) 
 
     # 📸 صورة 1
     driver.save_screenshot("screen1.png")
