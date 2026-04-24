@@ -87,10 +87,6 @@ jobs:
       - name: Wait page load
         run: sleep 15
 
-       # Screenshot 2 (بعد فتح الموقع)
-      # - name: Screenshot Web
-      #   run: xcrun simctl io $DEVICE_ID screenshot Local_web.png
-
 
       - name: Kill stuck WDA (IMPORTANT 🔥)
         run: |
@@ -101,14 +97,5 @@ jobs:
       # تشغيل الاختبار
       - name: Run Appium Script
         run: |
-          python3 test.py
+          python3 Qasha M-N.py
 
-      # حفظ الصور
-      - name: Upload Screenshots
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshots
-          path: |
-            screen1.png
-            screen2.png
-            Local_web.png
