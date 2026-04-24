@@ -2,6 +2,7 @@ from appium import webdriver
 from appium.options.ios import XCUITestOptions
 import time
 import os
+import random
 
 options = XCUITestOptions()
 options.platform_name = "iOS"
@@ -25,12 +26,37 @@ try:
     time.sleep(8) 
 
 
+    # اختبار توليد قيم عشوائية
+    x = random.randint(100, 1000)
+    y = random.randint(250, 2222)
+    
+    # استخدام القيم في الأمر
+    driver.execute_script("mobile: tap", {
+        "x": x,
+        "y": y
+    })
     # 👆 نقر بالإحداثيات (الطريقة الصحيحة)
     driver.execute_script("mobile: tap", {
         "x": 950,
         "y": 520
     })
     time.sleep(2)
+    x = random.randint(100, 1000)
+    y = random.randint(250, 2222)
+    
+    # استخدام القيم في الأمر
+    driver.execute_script("mobile: tap", {
+        "x": x,
+        "y": y
+    })
+    x = random.randint(100, 1000)
+    y = random.randint(250, 2222)
+    
+    # استخدام القيم في الأمر
+    driver.execute_script("mobile: tap", {
+        "x": x,
+        "y": y
+    })
     
     driver.execute_script("mobile: tap", {
         "x": 950,
@@ -42,6 +68,15 @@ try:
         "y": 1850
     })
     time.sleep(2)
+    
+    x = random.randint(100, 1000)
+    y = random.randint(250, 2222)
+    # استخدام القيم في الأمر
+    driver.execute_script("mobile: tap", {
+        "x": x,
+        "y": y
+    })
+    
     driver.execute_script("mobile: tap", {
         "x": 375,
         "y": 2220
