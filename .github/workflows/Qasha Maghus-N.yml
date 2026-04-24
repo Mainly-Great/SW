@@ -97,5 +97,5 @@ jobs:
       # تشغيل الاختبار
       - name: Run Appium Script
         run: |
-          python3 Qasha Maghus-N.py
+          python3 Qasha-Maghus-N.py
 
