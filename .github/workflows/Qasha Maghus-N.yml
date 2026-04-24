@@ -85,8 +85,13 @@ jobs:
 
       # انتظار تحميل الصفحة
       - name: Wait page load
-        run: sleep 15
+        run: sleep 3
 
+      - name: Test random Wait 
+        run: |
+          SLEEP_TIME=$((8 + RANDOM % 33))  # 33 = 40 - 8 + 1
+          echo "Sleeping for $SLEEP_TIME seconds..."
+          sleep $SLEEP_TIME
 
       - name: Kill stuck WDA (IMPORTANT 🔥)
         run: |
