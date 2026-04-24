@@ -97,6 +97,9 @@ try:
         "x": 580,
         "y": 1620
     })
+    driver.execute_script("mobile: swipe", {
+        "direction": "up"
+    })
     time.sleep(2)
     driver.execute_script("mobile: tap", {
         "x": 620,
@@ -125,6 +128,13 @@ try:
     })
 
     time.sleep(3)
+    x = random.randint(100, 1000)
+    y = random.randint(250, 2222)
+    # استخدام القيم في الأمر
+    driver.execute_script("mobile: tap", {
+        "x": x,
+        "y": y
+    })
 
 
 finally:
