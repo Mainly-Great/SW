@@ -1,0 +1,14 @@
+{
+  "name": "qasha-maghus-z",
+  "version": "1.0.0-maghus-z-article",
+  "description": "Imported workflow from Mainly-Great/SW/SW",
+  "type": "module",
+  "scripts": {
+    "workflow": ".github/workflows/Qasha Maghus-Z.yml"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
